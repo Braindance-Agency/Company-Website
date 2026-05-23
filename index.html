@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Voice Is Losing You Deals You Should Be Winning — Braindance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #4B39B5;
+  --orange: #F4592F;
+  --cream:  #EFE9CE;
+  --pink:   #F79FC1;
+  --on-cream-head:  #4B39B5;
+  --on-cream-body:  #5A5040;
+  --on-cream-muted: #8A7F6A;
+  --on-purple-body: rgba(239,233,206,0.68);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--on-cream-body);
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 52px; }
+.container--mid { max-width: 900px; margin: 0 auto; padding: 0 52px; }
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  display: block;
+}
+
+/* ── NAV ── */
+nav {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 22px 52px;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.55rem; letter-spacing: 0.06em;
+  color: var(--cream); text-decoration: none;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--purple);
+  min-height: 100vh;
+  display: flex; align-items: flex-end;
+  padding: 0 0 100px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -10%; right: -5%;
+  width: 800px; height: 800px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(247,159,193,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; padding-top: 180px; width: 100%; }
+.hero-eyebrow { color: var(--pink); margin-bottom: 32px; }
+.hero-title {
+  font-size: clamp(3.8rem, 7.5vw, 8rem);
+  color: var(--cream); line-height: 0.93;
+}
+.hero-title span { color: var(--orange); }
+
+/* ── PROOF ── */
+.proof { background: var(--cream); padding: 100px 0; }
+.proof-eyebrow { color: var(--orange); margin-bottom: 52px; }
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.ba-card { padding: 56px 48px; }
+.ba-before { background: rgba(75,57,181,0.07); }
+.ba-after  { background: var(--orange); }
+.ba-lbl {
+  font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  margin-bottom: 28px; display: block;
+}
+.ba-before .ba-lbl { color: rgba(75,57,181,0.35); }
+.ba-after  .ba-lbl { color: rgba(239,233,206,0.6); }
+.ba-quote {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.12;
+}
+.ba-before .ba-quote { color: rgba(75,57,181,0.3); }
+.ba-after  .ba-quote { color: var(--cream); }
+.ba-verdict {
+  margin-top: 32px; font-size: 0.82rem;
+  font-weight: 600; letter-spacing: 0.02em;
+}
+.ba-before .ba-verdict { color: rgba(75,57,181,0.3); }
+.ba-after  .ba-verdict { color: rgba(239,233,206,0.8); }
+.proof-caption {
+  margin-top: 3px; padding: 28px 48px;
+  background: var(--purple);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  color: var(--cream); line-height: 1.1;
+}
+.proof-caption span { color: var(--orange); }
+
+/* ── CREDENTIAL ── */
+.credential { background: var(--orange); padding: 52px 0; }
+.cred-inner { display: flex; flex-direction: column; gap: 20px; }
+.cred-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.cred-label {
+  font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(239,233,206,0.55); margin-right: 12px;
+}
+.cred-name {
+  font-size: 0.85rem; font-weight: 700;
+  color: rgba(239,233,206,0.55);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.cred-sep { color: rgba(239,233,206,0.22); }
+.cred-statement {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--cream); line-height: 1.05; max-width: 820px;
+}
+
+/* ── PROBLEM ── */
+.problem { background: var(--cream); padding: 100px 0; }
+.problem .eyebrow { color: var(--orange); margin-bottom: 20px; }
+.problem h2 {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  color: var(--on-cream-head); margin-bottom: 40px;
+}
+.problem-body { max-width: 720px; }
+.problem-body p {
+  font-size: 1.05rem; color: var(--on-cream-body);
+  line-height: 1.78; margin-bottom: 24px;
+}
+.problem-body p:last-child { margin-bottom: 0; }
+.problem-body .bold-line {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--on-cream-head); line-height: 1.1;
+  margin-bottom: 24px; display: block;
+}
+.problem-body .bold-line span { color: var(--orange); }
+
+/* ── SYSTEM ── */
+.system { background: var(--cream); padding: 100px 0; border-top: 3px solid var(--purple); }
+.system-intro { margin-bottom: 64px; }
+.system-intro .eyebrow { color: var(--orange); margin-bottom: 16px; }
+.system-intro h2 {
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  color: var(--on-cream-head);
+}
+.system-intro p {
+  margin-top: 20px; font-size: 1.02rem;
+  color: var(--on-cream-muted); max-width: 500px; line-height: 1.78;
+}
+
+.steps { display: flex; flex-direction: column; gap: 3px; }
+.step { display: grid; grid-template-columns: 72px 1fr; }
+.step-n {
+  background: var(--purple);
+  display: flex; align-items: flex-start;
+  justify-content: center; padding-top: 44px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem; color: rgba(239,233,206,0.35);
+}
+.step-body {
+  background: rgba(75,57,181,0.06);
+  padding: 44px 48px 48px 40px;
+  border-bottom: 1px solid rgba(75,57,181,0.1);
+  transition: background 0.2s;
+}
+.step:hover .step-body { background: rgba(75,57,181,0.1); }
+.step-body .eyebrow { color: var(--orange); margin-bottom: 14px; }
+.step-body h3 {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  color: var(--on-cream-head); margin-bottom: 16px;
+}
+.step-body p {
+  font-size: 0.97rem; color: var(--on-cream-muted);
+  line-height: 1.8; max-width: 640px; margin-bottom: 14px;
+}
+.step-body p:last-child { margin-bottom: 0; }
+.step-produces {
+  margin-top: 24px; padding: 14px 20px;
+  border-left: 3px solid var(--purple);
+  background: rgba(75,57,181,0.06);
+  font-size: 0.86rem; color: var(--on-cream-muted);
+}
+.step-produces strong { color: var(--on-cream-head); }
+
+.step-final .step-body {
+  background: var(--purple); border-bottom: none;
+}
+.step-final:hover .step-body { background: var(--purple); filter: brightness(1.05); }
+.step-final .step-body .eyebrow { color: var(--pink); }
+.step-final .step-body h3 { color: var(--cream); }
+.step-final .step-body p { color: var(--on-purple-body); }
+.step-final .step-body p strong { color: var(--cream); font-weight: 700; }
+
+/* ── FOR ── */
+.for-section { background: var(--cream); padding: 100px 0; border-top: 3px solid var(--purple); }
+.for-section .eyebrow { color: var(--orange); margin-bottom: 16px; }
+.for-section h2 {
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  color: var(--on-cream-head); margin-bottom: 48px;
+  max-width: 800px;
+}
+.for-list { display: flex; flex-direction: column; gap: 2px; }
+.for-item {
+  padding: 24px 32px;
+  background: rgba(75,57,181,0.06);
+  font-size: 0.97rem; color: var(--on-cream-muted); line-height: 1.65;
+  border-left: 3px solid transparent;
+  transition: border-color 0.22s, color 0.22s;
+}
+.for-item:hover { border-left-color: var(--orange); color: var(--on-cream-body); }
+
+/* ── ABOUT ── */
+.about { background: var(--cream); padding: 100px 0; border-top: 3px solid var(--purple); }
+.about .eyebrow { color: var(--orange); margin-bottom: 16px; }
+.about-intro {
+  font-size: 1.05rem; color: var(--on-cream-muted);
+  max-width: 540px; line-height: 1.78; margin-bottom: 52px;
+}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.about-person { padding: 44px 40px; background: rgba(75,57,181,0.06); }
+.about-person h3 { font-size: 3.2rem; color: var(--on-cream-head); margin-bottom: 6px; }
+.about-role {
+  font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 20px; display: block;
+}
+.about-person p { font-size: 0.92rem; color: var(--on-cream-muted); line-height: 1.8; }
+
+/* ── PRICING ── */
+.pricing {
+  background: var(--purple);
+  padding: 80px 0;
+}
+.pricing .eyebrow { color: var(--pink); margin-bottom: 24px; }
+.pricing-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(5rem, 10vw, 10rem);
+  color: var(--cream);
+  line-height: 0.9;
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+.pricing-body {
+  font-size: 1.02rem;
+  color: var(--on-purple-body);
+  max-width: 560px;
+  line-height: 1.78;
+}
+.pricing-body strong { color: var(--cream); }
+
+/* ── LINKEDIN ── */
+.about-linkedin {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 20px;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--purple);
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+.about-linkedin:hover { opacity: 1; }
+.about-linkedin svg { flex-shrink: 0; }
+.close-section {
+  background: var(--purple);
+  padding: 120px 0; text-align: center;
+}
+.close-section .eyebrow { color: var(--pink); margin-bottom: 24px; }
+.close-section h2 {
+  font-size: clamp(2.8rem, 5.5vw, 6rem);
+  line-height: 1.0;
+  max-width: 1100px;
+  margin: 0 auto 52px;
+}
+.close-section h2 .line-cream  { color: var(--cream); }
+.close-section h2 .line-orange { color: var(--orange); }
+.close-email {
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--pink); text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(247,159,193,0.3); padding-bottom: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.close-email:hover { color: var(--cream); border-color: rgba(239,233,206,0.4); }
+
+/* ── FADE IN ── */
+.fi { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fi.v { opacity: 1; transform: none; }
+.fi.d1 { transition-delay: 0.12s; }
+.fi.d2 { transition-delay: 0.22s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 820px) {
+  nav { padding: 16px 24px; }
+  .container, .container--mid { padding: 0 24px; }
+  .hero { padding-bottom: 72px; }
+  .hero-inner { padding-top: 140px; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .ba-card { padding: 40px 28px; }
+  .proof-caption { padding: 24px 28px; }
+  .step { grid-template-columns: 1fr; }
+  .step-n { padding: 24px 24px 0; justify-content: flex-start; }
+  .step-body { padding: 28px 24px 36px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-person { padding: 36px 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="nav-logo">Braindance</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <span class="eyebrow hero-eyebrow fi">Braindance Agency</span>
+    <h1 class="hero-title fi d1">Your voice is losing you deals <span>you should be winning</span><span style="color:var(--orange)">.</span></h1>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof" id="proof">
+  <div class="container">
+    <span class="eyebrow proof-eyebrow fi">The Difference a Voice Makes</span>
+    <div class="ba-grid fi">
+      <div class="ba-card ba-before">
+        <span class="ba-lbl">Before</span>
+        <div class="ba-quote">"Our AI-powered platform delivers next-gen threat detection with real-time visibility across your entire attack surface."</div>
+        <div class="ba-verdict">Sounds like everyone else. Earns nothing.</div>
+      </div>
+      <div class="ba-card ba-after">
+        <span class="ba-lbl">After</span>
+        <div class="ba-quote">"You already have an attacker in your network. The question is whether you find them in 47 minutes or 47 days."</div>
+        <div class="ba-verdict">The second one earns the meeting.</div>
+      </div>
+    </div>
+    <div class="proof-caption fi">
+      Same company. Same product. <span>Different voice. Different message.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIAL -->
+<div class="credential">
+  <div class="container">
+    <div class="cred-inner fi">
+      <div class="cred-logos">
+        <span class="cred-label">Built inside</span>
+        <span class="cred-name">IBM</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">Microsoft</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">Google</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">Cisco</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">American Express</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">Spotify</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">Discord</span><span class="cred-sep">&middot;</span>
+        <span class="cred-name">T-Mobile</span>
+      </div>
+      <div class="cred-statement fi d1">We know what a strong brand voice looks like at scale. We built the methodology to deliver it in weeks, not years.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="container">
+    <span class="eyebrow fi">The Problem</span>
+    <h2 class="fi">Most companies are talking<br>to themselves.</h2>
+    <div class="problem-body">
+      <p class="fi">Most companies describe what they built instead of what changes for the person buying it. Features front and center. Technical proof stacked on technical proof. Your buyer does not buy technology. They buy the version of their business where the problem is gone.</p>
+
+      <span class="bold-line fi">Every startup is using AI to write their copy.<br><span>Most of them sound like it.</span></span>
+
+      <p class="fi">Not because AI is the problem. Because they handed AI the wheel without giving it a voice to drive with. If you have not defined your voice, someone else will. Your agency writes in theirs. Your freelancer writes in theirs. Your LLM pulls from every average thing ever written and produces something that belongs to no one. The companies that sound the same did not lose their voice to AI. They never built one.</p>
+
+      <p class="fi">Which means the companies that define their voice now will be the only ones their buyers can actually hear. Not because they are louder. Because they are the only ones that sound like someone worth listening to.</p>
+
+      <p class="fi">And there is a structural problem underneath all of it that most technical companies discover too late. Selling into enterprise means two buyers in every room. The technical buyer evaluating your product and the business buyer controlling the budget. They do not speak the same language. They do not have the same fears. One wants to know if it works. The other wants to know what happens if it does not. Most companies write for one and lose the other before the second meeting. A voice that works in both rooms without splitting in half is not a nice-to-have. It is what enterprise deals are won on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section class="system" id="process">
+  <div class="container">
+    <div class="system-intro fi">
+      <span class="eyebrow">The Braindance System</span>
+      <h2>One system.<br>Two layers.<br>Four steps.</h2>
+      <p>Each one feeds the next. None can be skipped. The output is not a document you read once. It is an operating system for every piece of content you produce.</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step fi">
+        <div class="step-n">01</div>
+        <div class="step-body">
+          <span class="eyebrow">Discovery</span>
+          <h3>We extract what written briefs never capture.</h3>
+          <p>Nine questions across five categories. Not a questionnaire. Not you presenting your company to us. An interview designed to surface the raw material that lives in you but has never been named.</p>
+          <p>The beliefs. The language. The competitors that make you angry. The phrases you reach for when you stop performing. Everything we build traces back to something you actually said in this session.</p>
+          <div class="step-produces"><strong>Produces:</strong> The Discovery Brief.</div>
+        </div>
+      </div>
+
+      <div class="step fi">
+        <div class="step-n">02</div>
+        <div class="step-body">
+          <span class="eyebrow">Voice Activation</span>
+          <h3>Eight components. One voice that is undeniably yours.</h3>
+          <p>Built sequentially from the Discovery session. Your North Star, the belief your brand organizes around. Your dual personas, two buyers named and distinct. The Muse, a named character who gives every writer a single editorial test before anything ships. Persona weights by channel. Voice guardrails. Before and after copy that proves the voice works before it deploys.</p>
+          <div class="step-produces"><strong>Produces:</strong> The Brand Voice Card.</div>
+        </div>
+      </div>
+
+      <div class="step fi">
+        <div class="step-n">03</div>
+        <div class="step-body">
+          <span class="eyebrow">Positioning Intelligence</span>
+          <h3>Find the white space. Own it.</h3>
+          <p>Your audience's actual pain points mapped against your product. Not assumptions. Research. Then compared against every competitor's current messaging to find the white space. Benefit-driven claims that are true to your product, relevant to your buyer, and unavailable to your competitors.</p>
+          <p>A feature is not a benefit. "Cross-platform telemetry correlation" is a feature. "You find the attacker who has been in your network for 47 days before your CEO reads about it on CNBC" is a benefit. Every differentiator gets run through that chain until it reaches the human consequence. Most marketing stops two levels too early.</p>
+          <div class="step-produces"><strong>Produces:</strong> The Positioning Brief.</div>
+        </div>
+      </div>
+
+      <div class="step step-final fi">
+        <div class="step-n">04</div>
+        <div class="step-body">
+          <span class="eyebrow">What You Walk Away With</span>
+          <h3>Not a document. An operating system.</h3>
+          <p>A skill file that encodes your voice, your positioning, and your research. Load it into any capable AI and it writes in your voice. Works with your agency. Your team. Any tool you are already using.</p>
+          <p>Before we hand it over, we run your voice through its paces. You see what it produces. You feel the difference between language that belongs to no one and language that is unmistakably yours. Then you take it and run.</p>
+          <p><strong>We do not write your content. We build the system that makes everything you write better, faster, and impossible to confuse with a competitor.</strong></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section class="for-section" id="for">
+  <div class="container">
+    <span class="eyebrow fi">Who This Is For</span>
+    <h2 class="fi">Any company with more than one competitor and something real to say.</h2>
+    <div class="for-list fi">
+      <div class="for-item">Startups who know their product is better than their messaging suggests.</div>
+      <div class="for-item">Established brands whose voice was built before AI changed what generic sounds like.</div>
+      <div class="for-item">Marketing teams producing content that performs below its potential because the voice underneath it is not distinct enough to carry the words.</div>
+      <div class="for-item">If your brand needs to work without you in the room, it needs a voice that can.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <span class="eyebrow fi">The Investment</span>
+    <div class="pricing-number fi d1">$18,000</div>
+    <p class="pricing-body fi d2">One engagement. Discovery through delivery. You own everything we build. <strong>No retainer. No dependency.</strong></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <span class="eyebrow fi">About Braindance</span>
+    <div class="about-grid">
+      <div class="about-person fi">
+        <h3>Andy Lewis</h3>
+        <span class="about-role">Co-Founder, Content Director</span>
+        <p>15 years building the voice that makes complex technology legible to the people who buy it. At IBM he built content systems that made cybersecurity make sense to two completely different audiences simultaneously. At T-Mobile and Dish Network he helped evolve brand voices for companies speaking to millions. For multiple YC-backed startups, he built brand voices from scratch. The same moment Braindance clients are in right now.</p>
+        <a href="https://www.linkedin.com/in/lewisaw/" target="_blank" rel="noopener noreferrer" class="about-linkedin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="about-person fi d1">
+        <h3>Chris Callahan</h3>
+        <span class="about-role">Co-Founder, Strategy Director</span>
+        <p>15 years inside the strategy rooms of the world's most recognizable technology companies. Microsoft. Google. American Express. Spotify. He has shaped brand voice for Discord and Turo, and in cybersecurity has worked with Dragos, Bishop Fox, and WestCap. What he kept seeing: complex solutions failing not because they didn't work, but because nobody in the room could explain why they mattered to the person signing the check.</p>
+        <a href="https://www.linkedin.com/in/chris-callahan-3057b58/" target="_blank" rel="noopener noreferrer" class="about-linkedin">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-section" id="contact">
+  <div class="container">
+    <span class="eyebrow fi">Braindance Agency</span>
+    <h2 class="fi">
+      <span class="line-cream">One conversation</span><br>
+      <span class="line-orange">changes what you say</span><br>
+      <span class="line-cream">in every room after it.</span>
+    </h2>
+    <a href="mailto:trust@braindance.agency" class="close-email fi d1">trust@braindance.agency</a>
+  </div>
+</section>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
