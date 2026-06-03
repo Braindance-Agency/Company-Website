@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Voice Is Losing You Deals You Should Be Winning — Braindance</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234B39B5'/%3E%3Ctext x='16' y='23' font-family='Georgia%2C serif' font-size='22' font-weight='700' text-anchor='middle' fill='%23EFE9CE'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -120,25 +121,28 @@ nav {
 .proof-caption span { color: var(--orange); }
 
 /* ── CREDENTIAL ── */
-.credential { background: var(--orange); padding: 52px 0; }
-.cred-inner { display: flex; flex-direction: column; gap: 20px; }
-.cred-logos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.credential { background: var(--orange); padding: 80px 0; }
+.cred-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 40px; }
 .cred-label {
   font-size: 0.64rem; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(239,233,206,0.55); margin-right: 12px;
+  color: var(--cream);
+}
+.cred-names {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 32px 56px;
 }
 .cred-name {
-  font-size: 0.85rem; font-weight: 700;
-  color: rgba(239,233,206,0.55);
-  letter-spacing: 0.06em; text-transform: uppercase;
-}
-.cred-sep { color: rgba(239,233,206,0.22); }
-.cred-statement {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  color: var(--cream); line-height: 1.05; max-width: 820px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--cream);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  transition: color 0.3s;
+  cursor: default;
 }
+.cred-name:hover { color: var(--pink); }
+.cred-sep { display: none; }
 
 /* ── PROBLEM ── */
 .problem { background: var(--cream); padding: 100px 0; }
@@ -171,7 +175,7 @@ nav {
 }
 .system-intro p {
   margin-top: 20px; font-size: 1.02rem;
-  color: var(--on-cream-muted); max-width: 500px; line-height: 1.78;
+  color: var(--on-cream-muted); max-width: 720px; line-height: 1.78;
 }
 
 .steps { display: flex; flex-direction: column; gap: 3px; }
@@ -217,7 +221,56 @@ nav {
 .step-final .step-body p { color: var(--on-purple-body); }
 .step-final .step-body p strong { color: var(--cream); font-weight: 700; }
 
-/* ── FOR ── */
+/* ── WORK EXAMPLES ── */
+.work { background: var(--purple); padding: 100px 0; }
+.work .eyebrow { color: var(--pink); margin-bottom: 16px; }
+.work h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: var(--cream); margin-bottom: 52px; max-width: 700px;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.work-card {
+  display: block;
+  text-decoration: none;
+  padding: 40px 40px 36px;
+  background: rgba(239,233,206,0.07);
+  border: 1px solid rgba(239,233,206,0.1);
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+}
+.work-card:hover {
+  background: rgba(239,233,206,0.13);
+  border-color: rgba(247,159,193,0.4);
+}
+.work-card-label {
+  font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 16px; display: block;
+  transition: color 0.2s;
+}
+.work-card h3 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--cream); line-height: 1.0; margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.work-card:hover h3 { color: var(--pink); }
+.work-card-arrow {
+  position: absolute; bottom: 32px; right: 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; color: rgba(239,233,206,0.25);
+  transition: color 0.2s, transform 0.2s;
+}
+.work-card:hover .work-card-arrow { color: var(--pink); transform: translateX(4px); }
+.work-card--wide { grid-column: 1 / -1; }
+@media (max-width: 820px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .work-card--wide { grid-column: auto; }
+  .work-card { padding: 32px 24px 44px; }
+}
 .for-section { background: var(--cream); padding: 100px 0; border-top: 3px solid var(--purple); }
 .for-section .eyebrow { color: var(--orange); margin-bottom: 16px; }
 .for-section h2 {
@@ -341,7 +394,7 @@ nav {
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="container hero-inner">
-    <span class="eyebrow hero-eyebrow fi">Braindance Agency</span>
+    <span class="eyebrow hero-eyebrow fi">A Brand Voice and Positioning Agency for Cybersecurity</span>
     <h1 class="hero-title fi d1">Your voice is losing you deals <span>you should be winning</span><span style="color:var(--orange)">.</span></h1>
   </div>
 </section>
@@ -372,8 +425,8 @@ nav {
 <div class="credential">
   <div class="container">
     <div class="cred-inner fi">
-      <div class="cred-logos">
-        <span class="cred-label">Built inside</span>
+      <span class="cred-label">Our Experience</span>
+      <div class="cred-names">
         <span class="cred-name">IBM</span><span class="cred-sep">&middot;</span>
         <span class="cred-name">Microsoft</span><span class="cred-sep">&middot;</span>
         <span class="cred-name">Google</span><span class="cred-sep">&middot;</span>
@@ -383,7 +436,6 @@ nav {
         <span class="cred-name">Discord</span><span class="cred-sep">&middot;</span>
         <span class="cred-name">T-Mobile</span>
       </div>
-      <div class="cred-statement fi d1">We know what a strong brand voice looks like at scale. We built the methodology to deliver it in weeks, not years.</div>
     </div>
   </div>
 </div>
@@ -394,15 +446,13 @@ nav {
     <span class="eyebrow fi">The Problem</span>
     <h2 class="fi">Most companies are talking<br>to themselves.</h2>
     <div class="problem-body">
-      <p class="fi">Most companies describe what they built instead of what changes for the person buying it. Features front and center. Technical proof stacked on technical proof. Your buyer does not buy technology. They buy the version of their business where the problem is gone.</p>
+      <p class="fi">Most companies describe what they built instead of what changes for the person buying it. Features front and center. Technical proof stacked on technical proof. Your buyer does not buy technology. They buy the version of their business where the problem is gone. Which means your copy also needs to speak to two audiences at the same time: technical and non-technical buyers.</p>
 
       <span class="bold-line fi">Every startup is using AI to write their copy.<br><span>Most of them sound like it.</span></span>
 
-      <p class="fi">Not because AI is the problem. Because they handed AI the wheel without giving it a voice to drive with. If you have not defined your voice, someone else will. Your agency writes in theirs. Your freelancer writes in theirs. Your LLM pulls from every average thing ever written and produces something that belongs to no one. The companies that sound the same did not lose their voice to AI. They never built one.</p>
+      <p class="fi">They handed AI the wheel without giving it a voice to drive with. If you have not defined your voice, someone else will. Your agency writes in theirs. Your freelancer writes in theirs. Your LLM pulls from every average thing ever written and produces something that belongs to no one.</p>
 
       <p class="fi">Which means the companies that define their voice now will be the only ones their buyers can actually hear. Not because they are louder. Because they are the only ones that sound like someone worth listening to.</p>
-
-      <p class="fi">And there is a structural problem underneath all of it that most technical companies discover too late. Selling into enterprise means two buyers in every room. The technical buyer evaluating your product and the business buyer controlling the budget. They do not speak the same language. They do not have the same fears. One wants to know if it works. The other wants to know what happens if it does not. Most companies write for one and lose the other before the second meeting. A voice that works in both rooms without splitting in half is not a nice-to-have. It is what enterprise deals are won on.</p>
     </div>
   </div>
 </section>
@@ -412,8 +462,8 @@ nav {
   <div class="container">
     <div class="system-intro fi">
       <span class="eyebrow">The Braindance System</span>
-      <h2>One system.<br>Two layers.<br>Four steps.</h2>
-      <p>Each one feeds the next. None can be skipped. The output is not a document you read once. It is an operating system for every piece of content you produce.</p>
+      <h2>Build a voice <span style="color:var(--orange)">nobody else</span><br>can own.</h2>
+      <p>Most agencies sell pieces. Voice. Positioning. Copy. Each one a separate engagement, a separate retainer, a separate vendor. The Dual Voice System is the integrated methodology that makes them work as one.</p>
     </div>
 
     <div class="steps">
@@ -433,7 +483,7 @@ nav {
         <div class="step-n">02</div>
         <div class="step-body">
           <span class="eyebrow">Voice Activation</span>
-          <h3>Eight components. One voice that is undeniably yours.</h3>
+          <h3>A voice that is undeniably yours.</h3>
           <p>Built sequentially from the Discovery session. Your North Star, the belief your brand organizes around. Your dual personas, two buyers named and distinct. The Muse, a named character who gives every writer a single editorial test before anything ships. Persona weights by channel. Voice guardrails. Before and after copy that proves the voice works before it deploys.</p>
           <div class="step-produces"><strong>Produces:</strong> The Brand Voice Card.</div>
         </div>
@@ -456,7 +506,6 @@ nav {
           <span class="eyebrow">What You Walk Away With</span>
           <h3>Not a document. An operating system.</h3>
           <p>A skill file that encodes your voice, your positioning, and your research. Load it into any capable AI and it writes in your voice. Works with your agency. Your team. Any tool you are already using.</p>
-          <p>Before we hand it over, we run your voice through its paces. You see what it produces. You feel the difference between language that belongs to no one and language that is unmistakably yours. Then you take it and run.</p>
           <p><strong>We do not write your content. We build the system that makes everything you write better, faster, and impossible to confuse with a competitor.</strong></p>
         </div>
       </div>
@@ -465,11 +514,41 @@ nav {
   </div>
 </section>
 
+<!-- WORK EXAMPLES -->
+<section class="work" id="work">
+  <div class="container">
+    <span class="eyebrow fi">The Work</span>
+    <h2 class="fi">See what the system builds.</h2>
+    <div class="work-grid">
+      <a href="https://divine-fog-4993.trust-f32.workers.dev" target="_blank" rel="noopener noreferrer" class="work-card fi">
+        <span class="work-card-label">Brand Voice</span>
+        <h3>Mars Security</h3>
+        <span class="work-card-arrow">→</span>
+      </a>
+      <a href="https://super-sound-f8a2.trust-f32.workers.dev" target="_blank" rel="noopener noreferrer" class="work-card fi d1">
+        <span class="work-card-label">Brand Voice</span>
+        <h3>Inkod</h3>
+        <span class="work-card-arrow">→</span>
+      </a>
+      <a href="https://rough-hat-7cea.trust-f32.workers.dev" target="_blank" rel="noopener noreferrer" class="work-card fi">
+        <span class="work-card-label">Brand Voice</span>
+        <h3>LP Collective</h3>
+        <span class="work-card-arrow">→</span>
+      </a>
+      <a href="https://bitter-art-af33.trust-f32.workers.dev" target="_blank" rel="noopener noreferrer" class="work-card fi d1">
+        <span class="work-card-label">Messaging &amp; Positioning Intelligence</span>
+        <h3>Braindance</h3>
+        <span class="work-card-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- WHO THIS IS FOR -->
 <section class="for-section" id="for">
   <div class="container">
     <span class="eyebrow fi">Who This Is For</span>
-    <h2 class="fi">Any company with more than one competitor and something real to say.</h2>
+    <h2 class="fi">Any company with more than one competitor and <span style="color:var(--orange)">something real to say.</span></h2>
     <div class="for-list fi">
       <div class="for-item">Startups who know their product is better than their messaging suggests.</div>
       <div class="for-item">Established brands whose voice was built before AI changed what generic sounds like.</div>
@@ -484,7 +563,7 @@ nav {
   <div class="container">
     <span class="eyebrow fi">The Investment</span>
     <div class="pricing-number fi d1">$18,000</div>
-    <p class="pricing-body fi d2">One engagement. Discovery through delivery. You own everything we build. <strong>No retainer. No dependency.</strong></p>
+    <p class="pricing-body fi d2">Discovery through delivery. You own everything we build.<br><strong>No retainer. No dependency.</strong></p>
   </div>
 </section>
 
