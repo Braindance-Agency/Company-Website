@@ -155,7 +155,9 @@ nav {
   padding: 18px 7vw;
   background: var(--cream);
   border-bottom: 4px solid var(--charcoal);
+  transition: box-shadow 0.25s ease, padding 0.25s ease;
 }
+nav.scrolled { padding-top: 10px; padding-bottom: 10px; box-shadow: 0 5px 0 rgba(32,33,36,0.13); }
 nav .logo {
   font-family: 'Bungee', cursive;
   font-size: 1rem;
@@ -173,7 +175,9 @@ nav a.nav-cta {
   padding: 10px 20px;
   border: 2px solid var(--charcoal);
   box-shadow: 4px 4px 0 var(--charcoal);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
+nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--charcoal); }
 
 /* ---------- hero ---------- */
 .hero { min-height: 82vh; display: flex; flex-direction: column; justify-content: center; }
@@ -258,12 +262,12 @@ nav a.nav-cta {
 .founder-block { display: flex; flex-direction: column; }
 .founder-img {
   display: block;
-  width: 240px;
+  width: 360px;
   margin: 0 0 8px 0;
 }
 .founders-row { display: flex; gap: 28px; align-items: flex-end; justify-content: flex-start; }
-.founders-row .founder-block { flex: 0 1 240px; min-width: 0; align-items: center; }
-.founders-row .founder-img { width: 100%; max-width: 240px; margin: 0 0 8px 0; }
+.founders-row .founder-block { flex: 0 1 360px; min-width: 0; align-items: center; }
+.founders-row .founder-img { width: 100%; max-width: 360px; margin: 0 0 8px 0; }
 .founder-card .role {
   display: inline-block;
   font-size: 0.72rem;
@@ -301,6 +305,32 @@ nav a.nav-cta {
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+/* ---------- motion ---------- */
+.fi {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.fi.v { opacity: 1; transform: none; }
+
+.fi .hl {
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s,
+              opacity 0.3s ease 0.2s;
+}
+.fi:not(.v) .hl { transform: rotate(-1deg) scale(0.6); opacity: 0; }
+.fi:not(.v) .hl.purple-bg,
+.fi:not(.v) .hl.pink-bg { transform: rotate(1deg) scale(0.6); opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fi { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .fi .hl { opacity: 1 !important; transition: none !important; }
+  .fi:not(.v) .hl { transform: rotate(-1deg); }
+  .fi:not(.v) .hl.purple-bg,
+  .fi:not(.v) .hl.pink-bg { transform: rotate(1deg); }
+  html { scroll-behavior: auto; }
 }
 
 /* ---------- responsive ---------- */
@@ -501,6 +531,49 @@ nav a.nav-cta {
   </div>
   <div class="contact">TRUST@BRAINDANCE.AGENCY</div>
 </section>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // stagger: section children reveal in sequence; grid cells count individually
+  document.querySelectorAll('section').forEach(function (sec) {
+    var i = 0;
+    Array.prototype.forEach.call(sec.children, function (child) {
+      var isRow = child.classList.contains('grid') || child.classList.contains('founders-row');
+      if (isRow && child.children.length) {
+        Array.prototype.forEach.call(child.children, function (cell, j) {
+          cell.classList.add('fi');
+          cell.style.transitionDelay = ((i + j) * 0.12) + 's';
+        });
+        i += child.children.length;
+      } else {
+        child.classList.add('fi');
+        child.style.transitionDelay = (i * 0.12) + 's';
+        i += 1;
+      }
+    });
+  });
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.fi').forEach(function (el) { el.classList.add('v'); });
+  } else {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fi').forEach(function (el) { obs.observe(el); });
+  }
+
+  var nav = document.querySelector('nav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+})();
+</script>
 
 </body>
 </html>
