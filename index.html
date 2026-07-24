@@ -33,6 +33,8 @@ body {
 section { padding: 110px 7vw; border-bottom: 4px solid var(--charcoal); position: relative; }
 section.purple { background: var(--purple); color: var(--cream); }
 section.charcoal { background: var(--charcoal); color: var(--cream); }
+section.orange { background: var(--orange); color: var(--cream); }
+section.pink { background: var(--pink); color: var(--charcoal); }
 
 h1, h2 {
   font-family: 'Bungee', cursive;
@@ -64,6 +66,7 @@ h3 {
 .eyebrow .num { background: var(--charcoal); color: var(--cream); padding: 4px 11px; }
 section.purple .eyebrow .num { background: var(--cream); color: var(--purple); }
 section.charcoal .eyebrow .num { background: var(--orange); color: var(--cream); }
+section.orange .eyebrow .num { background: var(--cream); color: var(--orange); }
 
 .hl {
   display: inline-block;
@@ -87,7 +90,8 @@ section.charcoal .eyebrow .num { background: var(--orange); color: var(--cream);
   padding: 30px 28px;
   color: var(--charcoal);
 }
-section.purple .card, section.charcoal .card { box-shadow: 8px 8px 0 rgba(0,0,0,0.5); }
+section.purple .card, section.charcoal .card,
+section.orange .card, section.pink .card { box-shadow: 8px 8px 0 rgba(0,0,0,0.5); }
 .card p { font-size: 0.88rem; }
 .card .tag {
   display: inline-block;
@@ -143,6 +147,7 @@ section.purple .card, section.charcoal .card { box-shadow: 8px 8px 0 rgba(0,0,0,
 .cta-btn:hover { transform: translate(3px, 3px); box-shadow: 4px 4px 0 var(--charcoal); }
 section.charcoal .cta-btn { box-shadow: 7px 7px 0 rgba(255,255,255,0.25); }
 section.charcoal .cta-btn:hover { box-shadow: 4px 4px 0 rgba(255,255,255,0.25); }
+section.orange .cta-btn { background: var(--cream); color: var(--charcoal); }
 
 /* ---------- nav ---------- */
 nav {
@@ -178,6 +183,22 @@ nav a.nav-cta {
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--charcoal); }
+nav .nav-links { display: flex; gap: 26px; align-items: center; }
+nav .nav-links a {
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  color: var(--charcoal);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.15s ease;
+}
+nav .nav-links a:hover { border-bottom-color: var(--orange); }
+
+/* keeps an anchored section heading clear of the sticky nav */
+section[id] { scroll-margin-top: 92px; }
 
 /* ---------- hero ---------- */
 .hero { min-height: 82vh; display: flex; flex-direction: column; justify-content: center; }
@@ -263,11 +284,12 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 .founder-img {
   display: block;
   width: 360px;
+  height: auto;
   margin: 0 0 8px 0;
 }
 .founders-row { display: flex; gap: 28px; align-items: flex-end; justify-content: flex-start; }
 .founders-row .founder-block { flex: 0 1 360px; min-width: 0; align-items: center; }
-.founders-row .founder-img { width: 100%; max-width: 360px; margin: 0 0 8px 0; }
+.founders-row .founder-img { width: 100%; max-width: 360px; height: auto; margin: 0 0 8px 0; }
 .founder-card .role {
   display: inline-block;
   font-size: 0.72rem;
@@ -339,6 +361,7 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
   section { padding: 80px 6vw; }
   .path-step { grid-template-columns: 60px 1fr; }
   .path-step .step-num { font-size: 1.7rem; }
+  nav .nav-links { display: none; }
 }
 </style>
 </head>
@@ -346,6 +369,12 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 
 <nav>
   <span class="logo">BRAINDANCE</span>
+  <div class="nav-links">
+    <a href="#what-it-is">What It Is</a>
+    <a href="#whats-in-it">What's In It</a>
+    <a href="#offer">The Offer</a>
+    <a href="#about">About</a>
+  </div>
   <a class="nav-cta" href="mailto:trust@braindance.agency?subject=Brain%20Scan">GET A BRAIN SCAN</a>
 </nav>
 
@@ -359,7 +388,7 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 </section>
 
 <!-- ============ 02 THE PROBLEM ============ -->
-<section>
+<section class="pink">
   <div class="eyebrow"><span class="num">01</span> THE PROBLEM</div>
   <h2>YOUR AI IS ONLY AS GOOD AS <span class="hl orange-bg">WHAT YOU FEED IT.</span></h2>
   <div class="body-copy">
@@ -371,7 +400,7 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 </section>
 
 <!-- ============ 03 SCOPE ============ -->
-<section>
+<section class="orange" id="what-it-is">
   <div class="eyebrow"><span class="num">02</span> SCOPE</div>
   <h2>WE BUILD THE <span class="hl purple-bg">MIND.</span><br>NOT THE DATABASE.</h2>
   <div class="grid grid-2">
@@ -398,7 +427,7 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 </section>
 
 <!-- ============ 04 ANATOMY ============ -->
-<section class="charcoal">
+<section class="charcoal" id="whats-in-it">
   <div class="eyebrow"><span class="num">03</span> UNDER THE HOOD</div>
   <h2>ANATOMY OF A <span class="hl orange-bg">GTM BRAIN.</span></h2>
   <div class="body-copy" style="margin-bottom:44px;">
@@ -443,7 +472,7 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 </section>
 
 <!-- ============ 05 THE OFFER ============ -->
-<section class="purple">
+<section class="purple" id="offer">
   <div class="eyebrow"><span class="num">04</span> THE OFFER</div>
   <h2>SCAN. BUILD. <span class="hl orange-bg">FEED.</span></h2>
 
@@ -491,7 +520,7 @@ nav a.nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(
 </section>
 
 <!-- ============ 06 ABOUT ============ -->
-<section>
+<section id="about">
   <div class="eyebrow"><span class="num">05</span> ABOUT</div>
   <h2>THE BRAINS BEHIND <span class="hl purple-bg">BRAINDANCE.</span></h2>
   <div class="founders-row">
