@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%234B39B5'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='29' font-weight='bold' fill='%23EFE9CE' text-anchor='middle'%3EBD%3C/text%3E%3C/svg%3E">
-<title>BRAINDANCE — Build Your GTM Brain</title>
+<title>Braindance — Positioning, websites and decks for cybersecurity companies</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
@@ -109,6 +109,7 @@ section.orange .card, section.pink .card { box-shadow: 8px 8px 0 rgba(0,0,0,0.5)
 
 .grid { display: grid; gap: 30px; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
 
 .list-plain { list-style: none; }
@@ -210,75 +211,6 @@ section[id] { scroll-margin-top: 92px; }
 }
 .hero .cta-row { margin-top: 44px; }
 
-/* ---------- code window ---------- */
-.code-window {
-  background: #1a1b1e;
-  border: 3px solid var(--cream);
-  border-radius: 10px;
-  box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
-  overflow: hidden;
-  max-width: 900px;
-}
-.code-window .bar {
-  background: var(--purple);
-  padding: 12px 18px;
-  display: flex;
-  gap: 8px;
-  border-bottom: 3px solid var(--cream);
-}
-.code-window .bar span { width: 13px; height: 13px; border-radius: 50%; display: inline-block; }
-.code-window .bar .r { background: var(--orange); }
-.code-window .bar .c { background: var(--cream); }
-.code-window .bar .d { background: #1a1b1e; }
-.code-window pre {
-  padding: 30px 26px;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: clamp(0.62rem, 1.05vw, 0.84rem);
-  line-height: 1.75;
-  color: #c9c5b4;
-  overflow-x: auto;
-}
-.code-window .cm { color: #8a877a; }
-.code-window .layer { color: var(--orange); font-weight: 700; }
-.code-window .dir { color: var(--cream); font-weight: 600; }
-
-/* ---------- offer steps ---------- */
-.path-step {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 26px;
-  align-items: start;
-  padding: 44px 0;
-  border-bottom: 3px solid rgba(239,233,206,0.3);
-}
-.path-step:last-of-type { border-bottom: none; }
-.path-step .step-num {
-  font-family: 'Bungee', cursive;
-  font-size: 2.4rem;
-  color: var(--orange);
-  line-height: 1;
-}
-.path-step h3 { color: var(--cream); }
-.path-step p { font-size: 0.92rem; max-width: 680px; }
-.path-step .brain-cards { margin-top: 28px; }
-.workshop-note {
-  margin-top: 30px;
-  background: rgba(0,0,0,0.25);
-  border: 2px dashed rgba(239,233,206,0.4);
-  padding: 22px 24px;
-  max-width: 760px;
-  font-size: 0.88rem;
-}
-.workshop-note strong { font-weight: 700; }
-.feed-list { list-style: none; margin-top: 8px; max-width: 680px; }
-.feed-list li {
-  padding: 12px 0;
-  border-bottom: 2px dashed rgba(239,233,206,0.3);
-  font-size: 0.9rem;
-}
-.feed-list li:last-child { border-bottom: none; }
-.feed-list strong { font-weight: 700; }
-
 /* ---------- founders ---------- */
 .founder-block { display: flex; flex-direction: column; }
 .founder-img {
@@ -357,7 +289,7 @@ section[id] { scroll-margin-top: 92px; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 940px) {
-  .grid-2, .two-col { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .two-col { grid-template-columns: 1fr; }
   section { padding: 80px 6vw; }
   .path-step { grid-template-columns: 60px 1fr; }
   .path-step .step-num { font-size: 1.7rem; }
@@ -370,158 +302,69 @@ section[id] { scroll-margin-top: 92px; }
 <nav>
   <span class="logo">BRAINDANCE</span>
   <div class="nav-links">
-    <a href="#what-it-is">What It Is</a>
-    <a href="#whats-in-it">What's In It</a>
-    <a href="#offer">The Offer</a>
+    <a href="#problem">The Problem</a>
+    <a href="#what-we-make">What We Make</a>
+    <a href="#how-we-work">How We Work</a>
     <a href="#about">About</a>
   </div>
-  <a class="nav-cta" href="mailto:trust@braindance.agency?subject=Brain%20Scan">GET A BRAIN SCAN</a>
+  <a class="nav-cta" href="mailto:trust@braindance.agency?subject=Project%20enquiry">START A PROJECT</a>
 </nav>
 
 <!-- ============ 01 HERO ============ -->
 <section class="hero">
-  <h1>EVERY TEAM NEEDS A <span class="hl purple-bg">GTM BRAIN.</span></h1>
-  <p class="sub">We build the intelligence infrastructure that turns your team's judgment into work your AI can actually produce.</p>
+  <h1 style="font-size: clamp(1.9rem, 5.6vw, 4.6rem);">MOST BUYERS CAN'T TELL<br>SECURITY VENDORS APART.<br><span class="hl purple-bg">INCLUDING YOURS.</span></h1>
+  <p class="sub">We fix that. Positioning, brand, websites and decks for cybersecurity companies.</p>
   <div class="cta-row">
-    <a class="cta-btn" href="mailto:trust@braindance.agency?subject=Brain%20Scan">START WITH A BRAIN SCAN</a>
+    <a class="cta-btn" href="mailto:trust@braindance.agency?subject=Project%20enquiry">START A PROJECT</a>
   </div>
 </section>
 
 <!-- ============ 02 THE PROBLEM ============ -->
-<section class="pink">
+<section class="pink" id="problem">
   <div class="eyebrow"><span class="num">01</span> THE PROBLEM</div>
-  <h2>YOUR AI IS ONLY AS GOOD AS <span class="hl orange-bg">WHAT YOU FEED IT.</span></h2>
+  <h2>THERE ARE 3,500+ VENDORS ALL SAYING <span class="hl orange-bg">THE SAME THING.</span></h2>
   <div class="body-copy">
-    <p>Most companies are running their go-to-market on <strong>prompts and prayers.</strong> A blank chat window, a hopeful instruction, and output that sounds like everyone else's, because it was built from nothing.</p>
-    <p>Buying another AI tool does not fix this. The tool is empty until you fill it. What you feed it is the whole game, and almost nobody has built the thing worth feeding.</p>
-    <p>That thing is a full system: your processes, your thinking, your customer, your evidence, and the workflow that connects it, loaded into the AI before anyone types a word. It is your company's intelligence infrastructure, built for go-to-market.</p>
-    <p><strong>We call it your GTM Brain.</strong></p>
+    <p>A buyer who can't name what makes you different has no reason to choose you. A buyer who can't tell the product is built for them has no reason to keep reading.</p>
+    <p>Neither one will ever tell you. They just go with someone else.</p>
   </div>
 </section>
 
 <!-- ============ 03 SCOPE ============ -->
-<section class="orange" id="what-it-is">
-  <div class="eyebrow"><span class="num">02</span> SCOPE</div>
-  <h2>WE BUILD THE <span class="hl purple-bg">MIND.</span><br>NOT THE DATABASE.</h2>
-  <div class="grid grid-2">
+<section class="orange" id="what-we-make">
+  <div class="eyebrow"><span class="num">02</span> WHAT WE MAKE</div>
+  <h2>THE THINGS BUYERS <span class="hl black">JUDGE YOU ON.</span></h2>
+  <div class="grid grid-3">
     <div class="card">
-      <span class="tag">YOUR GTM BRAIN IS</span>
-      <ul class="list-plain">
-        <li>Positioning, voice, and message architecture</li>
-        <li>Customer and competitive intelligence</li>
-        <li>Campaign history and what actually worked</li>
-        <li>Sales language, objections, launch playbooks</li>
-        <li>Execution skills that write, check, and build in your voice</li>
-      </ul>
+      <span class="tag dark">YOUR BRANDING</span>
+      <p>Positioning, message architecture, brand voice, and the identity that carries them. Everything else gets built on this.</p>
     </div>
     <div class="card">
-      <span class="tag orange">YOUR GTM BRAIN IS NOT</span>
-      <ul class="list-plain">
-        <li>"All your IP." Not org charts, HR, code, or finance</li>
-        <li>Not a search tool bolted onto your file server</li>
-        <li>Not a data architecture or compliance project</li>
-        <li>Not another tool your team has to learn</li>
-      </ul>
+      <span class="tag">YOUR SITES</span>
+      <p>Written, designed and built. A single landing page or a full site, working from a locked brand rather than a mood board.</p>
+    </div>
+    <div class="card">
+      <span class="tag dark">YOUR DECKS</span>
+      <p>Investor and sales. The story an investor forwards, and the one your team can actually present.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ 04 ANATOMY ============ -->
-<section class="charcoal" id="whats-in-it">
-  <div class="eyebrow"><span class="num">03</span> UNDER THE HOOD</div>
-  <h2>ANATOMY OF A <span class="hl orange-bg">GTM BRAIN.</span></h2>
-  <div class="body-copy" style="margin-bottom:44px;">
-    <p>The intelligence infrastructure we build is a versioned, model-agnostic system of modules that loads into any capable AI: Claude, GPT, Gemini, whatever your team runs. We've spent decades building teams, processes and creative workflows that have produced award-winning work. Now we're building your team's go-to-market brain.</p>
-  </div>
-  <div class="code-window">
-    <div class="bar"><span class="r"></span><span class="c"></span><span class="d"></span></div>
-    <pre>
-{client}-gtm-brain/
-|
-|-- README.md                    <span class="cm"># Version history, overview, structure</span>
-|-- CLAUDE.md                    <span class="cm"># How to run this brain</span>
-|
-|-- <span class="dir">memory/</span>                      <span class="layer"># LAYER 1: MEMORY</span>
-|   |-- voice/                   <span class="cm"># Brand Voice Card content</span>
-|   |-- positioning/             <span class="cm"># Position, white space, so-what chains</span>
-|   |-- message-architecture/    <span class="cm"># Claim hierarchy and proof</span>
-|   |-- competitors/             <span class="cm"># Audited competitor messaging</span>
-|   |-- audience/                <span class="cm"># Who they are, what they ignore</span>
-|   |-- evidence-library/        <span class="cm"># Case studies, data, customer language</span>
-|
-|-- <span class="dir">skills/</span>                      <span class="layer"># LAYER 2: EXECUTION</span>
-|   |-- voice-check/             <span class="cm"># Does this sound like us</span>
-|   |-- content-writer/          <span class="cm"># LinkedIn, blogs, emails, ads</span>
-|   |-- thought-leadership/      <span class="cm"># Long-form articles in voice</span>
-|   |-- campaign-brief/          <span class="cm"># Campaign planning engine</span>
-|   |-- concept-generator/       <span class="cm"># Generate mode</span>
-|   |-- concept-pressure-test/   <span class="cm"># Pressure-test mode</span>
-|   |-- deck-builder/            <span class="cm"># Branded presentations</span>
-|   |-- case-study-writer/       <span class="cm"># Customer proof</span>
-|
-|-- <span class="dir">embedded/</span>                    <span class="layer"># LAYER 3: METHODOLOGY</span>
-|   |-- copywriting-masters.md   <span class="cm"># The canon</span>
-|   |-- copy-application.md      <span class="cm"># How the canon gets applied</span>
-|   |-- anti-slop-filter.md      <span class="cm"># The quality gate</span>
-|
-|-- templates/                   <span class="cm"># Client visual identity</span>
-|-- output/                      <span class="cm"># Generated deliverables</span>
-|-- setup/                       <span class="cm"># Onboarding for your team</span>
-    </pre>
+<section class="charcoal" id="how-we-work">
+  <div class="eyebrow"><span class="num">03</span> HOW WE WORK</div>
+  <h2>FULL-SERVICE. <span class="hl orange-bg">FLAT RATES.</span></h2>
+  <div class="body-copy">
+    <p>Strategy, copy, design, build. One team start to finish, so you are not handing a positioning document to a designer who has never heard of your category.</p>
+    <p>Every project is quoted flat before we start. You get the price and the date up front, and neither one moves unless you change what you asked for.</p>
+    <p>You own all of it. Source files, code, copy. No licenses, no exceptions.</p>
   </div>
 </section>
 
 <!-- ============ 05 THE OFFER ============ -->
-<section class="purple" id="offer">
-  <div class="eyebrow"><span class="num">04</span> THE OFFER</div>
-  <h2>SCAN. BUILD. <span class="hl orange-bg">FEED.</span></h2>
-
-  <div class="path-step">
-    <div class="step-num">01</div>
-    <div>
-      <h3>THE BRAIN SCAN</h3>
-      <p>The entry point. A paid diagnostic of your go-to-market intelligence: where your voice is generic, where your positioning leaks, where your content underperforms, and what to fix. You get findings and recommendations you can act on with us or without us.</p>
-    </div>
-  </div>
-
-  <div class="path-step">
-    <div class="step-num">02</div>
-    <div>
-      <h3>THE BUILD</h3>
-      <p>We construct your brain: memory, execution skills, and methodology, installed in your environment. You own everything we build.</p>
-      <div class="grid grid-2 brain-cards">
-        <div class="card">
-          <h3><span class="hl purple-bg">The Marketing Brain</span></h3>
-          <p>Your team's intelligence layer. Voice, positioning, message architecture, competitive intelligence, and the execution skills that write, check, and build in your voice. Every hire, campaign, and channel starts from institutional memory instead of zero.</p>
-        </div>
-        <div class="card">
-          <h3><span class="hl orange-bg">The Executive Brain</span></h3>
-          <p>Your point of view as a system. Takes, talks, and thinking encoded in your locked voice, ready for LinkedIn, keynotes, and every room you can't be in.</p>
-        </div>
-      </div>
-      <div class="workshop-note">
-        <strong>Missing components?</strong> A brain is only as smart as what's in it. If the scan finds a generic voice, weak positioning, or untested research, we can build those components together in a series of workshops before they go in the brain.
-      </div>
-    </div>
-  </div>
-
-  <div class="path-step">
-    <div class="step-num">03</div>
-    <div>
-      <h3>THE FEED AKA BRAINTENANCE</h3>
-      <p>A brain built in March is already outdated by July. Braintenance is the monthly subscription that keeps yours current, with the two people who built it working alongside you:</p>
-      <ul class="feed-list">
-        <li><strong>Monthly brain updates.</strong> You flag the work you loved and the campaigns that performed. We curate it through the quality gate and commit it to the brain, with a changelog you can read.</li>
-        <li><strong>Two calls a month.</strong> Tell us what's working and what's not. We can diagnose your creative work, processes and workflows then roll the solutions into your brain updates.</li>
-      </ul>
-      <p style="margin-top:18px;">You own the brain outright and it runs in any AI you like. What you subscribe to is the two of us deciding what is good enough to go in it.</p>
-    </div>
-  </div>
-</section>
 
 <!-- ============ 06 ABOUT ============ -->
 <section id="about">
-  <div class="eyebrow"><span class="num">05</span> ABOUT</div>
+  <div class="eyebrow"><span class="num">04</span> ABOUT</div>
   <h2>THE BRAINS BEHIND <span class="hl purple-bg">BRAINDANCE.</span></h2>
   <div class="founders-row">
     <div class="founder-block">
@@ -537,26 +380,23 @@ section[id] { scroll-margin-top: 92px; }
     <div class="body-copy" style="margin-top:20px;">
       <p>We met as college roommates, one of us buried in microbiology, the other in literature. We lost touch, then ran into each other years later at Goodby Silverstein &amp; Partners, a strategist and a copywriter, and we've worked together on and off ever since.</p>
       <p>We've worked for some of the biggest brands in the world, building teams, developing efficiency workflows, and creating award-winning work for Microsoft, Google, IBM, American Express, Cisco, Volkswagen, Budweiser, Frito-Lay, T-Mobile, and Spotify.</p>
-      <p>Knowing how to build the system that produces good work at scale is the rare part, and that is the knowledge we distill into your GTM Brain. It's your intelligence infrastructure, and it works with any AI tool you already use.</p>
+      <p>Knowing how to build the system that produces good work at scale is the rare part. We point it at cybersecurity, where the products are complicated, the buyers are skeptical, and almost every company on the market sounds like the one beside it.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ 07 CLOSE ============ -->
 <section class="charcoal close-section">
-  <div class="eyebrow"><span class="num">06</span> THE POINT</div>
+  <div class="eyebrow"><span class="num">05</span> THE POINT</div>
   <h1 style="font-size: clamp(2rem, 5.2vw, 4.2rem);">
-    EVERY COMPANY IS USING AI.<br>
-    THEY ALL <span class="hl orange-bg">SOUND THE SAME.</span><br><br>
-    A GTM BRAIN MAKES YOU<br>
-    <span class="hl purple-bg">IMPOSSIBLE TO MISTAKE</span><br>
-    FOR ANYONE ELSE.
+    IF THEY CAN'T <span class="hl orange-bg">TELL YOU APART,</span><br>
+    THEY WON'T <span class="hl purple-bg">REMEMBER YOU.</span>
   </h1>
   <div class="cta-row" style="margin-top: 48px;">
-    <a class="cta-btn" href="mailto:trust@braindance.agency?subject=Brain%20Scan">GET YOUR BRAIN SCAN</a>
+    <a class="cta-btn" href="mailto:trust@braindance.agency?subject=Project%20enquiry">START A PROJECT</a>
   </div>
   <div class="partner-line">
-    If you're using AI and haven't built your brain yet, let's talk.
+    Tell us what you're building and what you need made.
   </div>
   <div class="contact">TRUST@BRAINDANCE.AGENCY</div>
 </section>
