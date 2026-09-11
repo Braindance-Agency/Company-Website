@@ -110,6 +110,12 @@ section.orange .card, section.pink .card { box-shadow: 8px 8px 0 rgba(0,0,0,0.5)
 .grid { display: grid; gap: 30px; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+#what-we-make .card h3 {
+  font-size: clamp(1.15rem, 2.1vw, 1.6rem);
+  color: var(--purple);
+  margin-bottom: 16px;
+}
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
 
 .list-plain { list-style: none; }
@@ -335,15 +341,15 @@ section[id] { scroll-margin-top: 92px; }
   <h2>THE THINGS BUYERS <span class="hl black">JUDGE YOU ON.</span></h2>
   <div class="grid grid-3">
     <div class="card">
-      <span class="tag dark">YOUR BRANDING</span>
+      <h3>YOUR BRANDING</h3>
       <p>Positioning, message architecture, brand voice, and the identity that carries them. Everything else gets built on this.</p>
     </div>
     <div class="card">
-      <span class="tag">YOUR SITES</span>
+      <h3>YOUR WEBSITE</h3>
       <p>Written, designed and built. A single landing page or a full site, working from a locked brand rather than a mood board.</p>
     </div>
     <div class="card">
-      <span class="tag dark">YOUR DECKS</span>
+      <h3>YOUR DECK</h3>
       <p>Investor and sales. The story an investor forwards, and the one your team can actually present.</p>
     </div>
   </div>
