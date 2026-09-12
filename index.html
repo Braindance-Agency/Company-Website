@@ -260,11 +260,21 @@ section[id] { scroll-margin-top: 92px; }
   max-width: 660px;
 }
 .close-section .contact {
-  margin-top: 34px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  display: inline-block;
+  margin-top: 40px;
+  font-family: 'Bungee', cursive;
+  font-size: clamp(1rem, 3.1vw, 2rem);
+  letter-spacing: 0.01em;
   text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 5px solid var(--orange);
+  padding-bottom: 6px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.close-section .contact:hover {
+  color: var(--orange);
+  border-color: var(--cream);
 }
 
 /* ---------- motion ---------- */
@@ -399,13 +409,10 @@ section[id] { scroll-margin-top: 92px; }
     IF THEY CAN'T <span class="hl orange-bg">TELL YOU APART,</span><br>
     THEY WON'T <span class="hl purple-bg">REMEMBER YOU.</span>
   </h1>
-  <div class="cta-row" style="margin-top: 48px;">
-    <a class="cta-btn" href="mailto:trust@braindance.agency?subject=Project%20enquiry">MAKE THEM REMEMBER YOU</a>
-  </div>
   <div class="partner-line">
     Tell us what you're building and what you need made.
   </div>
-  <div class="contact">TRUST@BRAINDANCE.AGENCY</div>
+  <a class="contact" href="mailto:trust@braindance.agency?subject=Project%20enquiry">TRUST@BRAINDANCE.AGENCY</a>
 </section>
 
 <script>
